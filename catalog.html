@@ -3,54 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог - Милый мир</title>
+    <title>Каталог</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="catalog.html">Каталог</a></li>
-                <li><a href="cart.html">Корзина</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+        <h1>Каталог товаров</h1>
     </header>
-    <section class="products">
-        <h2>Каталог</h2>
-        <div class="product-grid">
-            <div class="product" onclick="showProductDetails('Комбинезон')">
-                <img src="images/onesie.png" alt="Комбинезон">
-                <p>Комбинезон - 1500 руб.</p>
-                <button onclick="event.stopPropagation(); addToCart('Комбинезон')">Добавить в корзину</button>
-            </div>
-            <div class="product" onclick="showProductDetails('Боди')">
-                <img src="images/bodysuit.png" alt="Боди">
-                <p>Боди - 1200 руб.</p>
-                <button onclick="event.stopPropagation(); addToCart('Боди')">Добавить в корзину</button>
-            </div>
-            <div class="product" onclick="showProductDetails('Набор одежды')">
-                <img src="images/clothing_set.png" alt="Набор одежды">
-                <p>Набор одежды - 2200 руб.</p>
-                <button onclick="event.stopPropagation(); addToCart('Набор одежды')">Добавить в корзину</button>
-            </div>
+    <div class="product-grid">
+        <div class="product" onclick="openModal('Комбинезон', 'Мягкий и уютный комбинезон для малышей.')">
+            <img src="images/product1.jpg" alt="Комбинезон">
+            <h3>Комбинезон</h3>
         </div>
-    </section>
-
-    <div id="product-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="">
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <p id="modal-price"></p>
+        <div class="product" onclick="openModal('Комплект одежды', 'Удобный комплект из трех предметов.')">
+            <img src="images/product2.jpg" alt="Комплект одежды">
+            <h3>Комплект одежды</h3>
         </div>
     </div>
-
-    <footer>
-        <p>© 2025 Милый мир – Все права защищены</p>
-    </footer>
+    
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+        </div>
+    </div>
 </body>
 </html>
