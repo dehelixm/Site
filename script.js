@@ -1,9 +1,9 @@
 let cart = [];
 
 const productImages = {
-    "Комбинезон": "images/onesie.png",
-    "Боди": "images/bodysuit.png",
-    "Набор одежды": "images/clothing_set.png"
+    "Комбинезон": "Images/onesie.png",
+    "Боди": "Images/bodysuit.png",
+    "Набор одежды": "Images/clothing_set.png"
 };
 
 function addToCart(product, price) {
