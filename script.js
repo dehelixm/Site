@@ -1,12 +1,25 @@
 let cart = [];
 
-const productImages = {
-    "Комбинезон": "Images/onesie.png",
-    "Боди": "Images/bodysuit.png",
-    "Набор одежды": "Images/clothing_set.png"
+const productDetails = {
+    "Комбинезон": {
+        "image": "images/onesie.png",
+        "description": "Мягкий хлопковый комбинезон для малышей. Дышащий материал, удобные застежки и стильный дизайн.",
+        "price": 1500
+    },
+    "Боди": {
+        "image": "images/bodysuit.png",
+        "description": "Уютное боди из органического хлопка. Подходит для повседневной носки и сна.",
+        "price": 1200
+    },
+    "Набор одежды": {
+        "image": "images/clothing_set.png",
+        "description": "Комплект из кофточки и штанишек, идеально подходит для прогулок и отдыха дома.",
+        "price": 2200
+    }
 };
 
-function addToCart(product, price) {
+function addToCart(product) {
+    const price = productDetails[product].price;
     cart.push({ product, price });
     localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${product} добавлен в корзину!`);
@@ -21,7 +34,7 @@ function loadCart() {
     let total = 0;
     cart.forEach((item, index) => {
         total += item.price;
-        let imageSrc = productImages[item.product] || "images/default.png";
+        let imageSrc = productDetails[item.product].image || "images/default.png";
         cartItems.innerHTML += `
             <div class="cart-item">
                 <img src="${imageSrc}" alt="${item.product}">
@@ -49,6 +62,20 @@ function placeOrder() {
     localStorage.removeItem("cart");
     cart = [];
     loadCart();
+}
+
+function showProductDetails(product) {
+    const details = productDetails[product];
+    const modal = document.getElementById("product-modal");
+    document.getElementById("modal-image").src = details.image;
+    document.getElementById("modal-title").innerText = product;
+    document.getElementById("modal-description").innerText = details.description;
+    document.getElementById("modal-price").innerText = `Цена: ${details.price} руб.`;
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("product-modal").style.display = "none";
 }
 
 document.addEventListener("DOMContentLoaded", () => {

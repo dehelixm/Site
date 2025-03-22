@@ -14,7 +14,6 @@
                 <li><a href="index.html">Главная</a></li>
                 <li><a href="catalog.html">Каталог</a></li>
                 <li><a href="cart.html">Корзина</a></li>
-                <li><a href="about.html">О нас</a></li>
                 <li><a href="contacts.html">Контакты</a></li>
             </ul>
         </nav>
@@ -22,23 +21,34 @@
     <section class="products">
         <h2>Каталог</h2>
         <div class="product-grid">
-            <div class="product">
-                <img src="Images/onesie.png" alt="Комбинезон">
+            <div class="product" onclick="showProductDetails('Комбинезон')">
+                <img src="images/onesie.png" alt="Комбинезон">
                 <p>Комбинезон - 1500 руб.</p>
-                <button onclick="addToCart('Комбинезон', 1500)">Добавить в корзину</button>
+                <button onclick="event.stopPropagation(); addToCart('Комбинезон')">Добавить в корзину</button>
             </div>
-            <div class="product">
-                <img src="Images/bodysuit.png" alt="Боди">
+            <div class="product" onclick="showProductDetails('Боди')">
+                <img src="images/bodysuit.png" alt="Боди">
                 <p>Боди - 1200 руб.</p>
-                <button onclick="addToCart('Боди', 1200)">Добавить в корзину</button>
+                <button onclick="event.stopPropagation(); addToCart('Боди')">Добавить в корзину</button>
             </div>
-            <div class="product">
-                <img src="Images/clothing_set.png" alt="Набор одежды">
+            <div class="product" onclick="showProductDetails('Набор одежды')">
+                <img src="images/clothing_set.png" alt="Набор одежды">
                 <p>Набор одежды - 2200 руб.</p>
-                <button onclick="addToCart('Набор одежды', 2200)">Добавить в корзину</button>
+                <button onclick="event.stopPropagation(); addToCart('Набор одежды')">Добавить в корзину</button>
             </div>
         </div>
     </section>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <p id="modal-price"></p>
+        </div>
+    </div>
+
     <footer>
         <p>© 2025 Милый мир – Все права защищены</p>
     </footer>
