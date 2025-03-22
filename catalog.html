@@ -3,8 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог | Детская одежда</title>
+    <title>Каталог | Магазин детской одежды</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        function showDescription(id) {
+            document.getElementById(id).classList.toggle("visible");
+        }
+
+        function addToCart(item) {
+            alert("Товар " + item + " добавлен в корзину!");
+        }
+    </script>
+    <style>
+        .catalog {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background: #fff;
+            max-width: 250px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .description {
+            display: none;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .description.visible {
+            display: block;
+        }
+
+        .add-to-cart {
+            background: #6b8e62;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .catalog {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -18,15 +76,51 @@
         </nav>
     </header>
     <main>
-        <h2>Наши товары</h2>
-        <div class="product">
-            <img src="img/item1.jpg" alt="Футболка">
-            <p>Футболка - 900₽</p>
-            <button>В корзину</button>
+        <div class="catalog">
+            <div class="product">
+                <img src="img/sweater.png" alt="Свитер">
+                <h3>Теплый свитер</h3>
+                <p>Цена: 1500 руб.</p>
+                <button class="add-to-cart" onclick="addToCart('Теплый свитер')">Добавить в корзину</button>
+                <p><a href="#" onclick="showDescription('desc1')">Описание</a></p>
+                <p id="desc1" class="description">Мягкий и уютный свитер из 100% хлопка.</p>
+            </div>
+            <div class="product">
+                <img src="img/dress.png" alt="Платье">
+                <h3>Очаровательное платье</h3>
+                <p>Цена: 1800 руб.</p>
+                <button class="add-to-cart" onclick="addToCart('Очаровательное платье')">Добавить в корзину</button>
+                <p><a href="#" onclick="showDescription('desc2')">Описание</a></p>
+                <p id="desc2" class="description">Легкое летнее платье с красивым принтом.</p>
+            </div>
+            <div class="product">
+                <img src="img/jeans.png" alt="Джинсы">
+                <h3>Комфортные джинсы</h3>
+                <p>Цена: 2000 руб.</p>
+                <button class="add-to-cart" onclick="addToCart('Комфортные джинсы')">Добавить в корзину</button>
+                <p><a href="#" onclick="showDescription('desc3')">Описание</a></p>
+                <p id="desc3" class="description">Прочные и удобные джинсы для активных детей.</p>
+            </div>
+            <div class="product">
+                <img src="img/tshirt.png" alt="Футболка">
+                <h3>Яркая футболка</h3>
+                <p>Цена: 1200 руб.</p>
+                <button class="add-to-cart" onclick="addToCart('Яркая футболка')">Добавить в корзину</button>
+                <p><a href="#" onclick="showDescription('desc4')">Описание</a></p>
+                <p id="desc4" class="description">Дышащий материал и стильный дизайн.</p>
+            </div>
+            <div class="product">
+                <img src="img/jacket.png" alt="Куртка">
+                <h3>Теплая куртка</h3>
+                <p>Цена: 3500 руб.</p>
+                <button class="add-to-cart" onclick="addToCart('Теплая куртка')">Добавить в корзину</button>
+                <p><a href="#" onclick="showDescription('desc5')">Описание</a></p>
+                <p id="desc5" class="description">Отлично сохраняет тепло в холодную погоду.</p>
+            </div>
         </div>
     </main>
     <footer>
-        <p>© 2025 Магазин детской одежды</p>
+        <p>© 2025 Магазин детской одежды. Все права защищены.</p>
     </footer>
 </body>
 </html>
