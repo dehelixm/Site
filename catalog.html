@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - Милый мир</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="catalog.html">Каталог</a></li>
+                <li><a href="cart.html">Корзина</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="products">
+        <h2>Каталог</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/onesie.png" alt="Комбинезон">
+                <p>Комбинезон - 1500 руб.</p>
+                <button onclick="addToCart('Комбинезон', 1500)">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="images/bodysuit.png" alt="Боди">
+                <p>Боди - 1200 руб.</p>
+                <button onclick="addToCart('Боди', 1200)">Добавить в корзину</button>
+            </div>
+            <div class="product">
+                <img src="images/clothing_set.png" alt="Набор одежды">
+                <p>Набор одежды - 2200 руб.</p>
+                <button onclick="addToCart('Набор одежды', 2200)">Добавить в корзину</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2025 Милый мир – Все права защищены</p>
+    </footer>
+</body>
+</html>
