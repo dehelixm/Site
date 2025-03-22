@@ -1,5 +1,11 @@
 let cart = [];
 
+const productImages = {
+    "Комбинезон": "images/onesie.png",
+    "Боди": "images/bodysuit.png",
+    "Набор одежды": "images/clothing_set.png"
+};
+
 function addToCart(product, price) {
     cart.push({ product, price });
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -15,7 +21,14 @@ function loadCart() {
     let total = 0;
     cart.forEach((item, index) => {
         total += item.price;
-        cartItems.innerHTML += `<p>${item.product} - ${item.price} руб. <button onclick="removeFromCart(${index})">Удалить</button></p>`;
+        let imageSrc = productImages[item.product] || "images/default.png";
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <img src="${imageSrc}" alt="${item.product}">
+                <p>${item.product} - ${item.price} руб.</p>
+                <button onclick="removeFromCart(${index})">Удалить</button>
+            </div>
+        `;
     });
 
     totalPrice.innerText = `Итого: ${total} руб.`;
