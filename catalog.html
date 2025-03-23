@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Каталог</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Каталог</a>
+            <a href="cart.html">Корзина</a>
+            <a href="about.html">О нас</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+    </header>
+    <main id="product-list">
+        <div class="product">
+            <img src="images/jumpsuit.png" alt="Комбинезон 'Оливковый уют'">
+            <h2>Комбинезон "Оливковый уют"</h2>
+            <p>Теплый и мягкий комбинезон на кнопках, идеально подходит для прохладной погоды. Сделан из органического хлопка.</p>
+            <p>Размеры: 56-80 см</p>
+            <p>Цена: 2 500 руб.</p>
+            <button onclick="addToCart(1)">Купить</button>
+        </div>
+        <div class="product">
+            <img src="images/bodysuit.png" alt="Боди 'Лесная сказка'">
+            <h2>Боди "Лесная сказка"</h2>
+            <p>Легкое боди с длинными рукавами в нежном оливковом цвете с принтом листочков.</p>
+            <p>Размеры: 62-86 см</p>
+            <p>Цена: 1 200 руб.</p>
+            <button onclick="addToCart(2)">Купить</button>
+        </div>
+        <div class="product">
+            <img src="images/pants.png" alt="Штанишки 'Комфорт'">
+            <h2>Штанишки "Комфорт"</h2>
+            <p>Свободные штанишки на резинке, не сковывают движения малыша. Выполнены из гипоаллергенного материала.</p>
+            <p>Размеры: 62-92 см</p>
+            <p>Цена: 1 500 руб.</p>
+            <button onclick="addToCart(3)">Купить</button>
+        </div>
+        <div class="product">
+            <img src="images/hat.png" alt="Шапочка 'Тёплый мох'">
+            <h2>Шапочка "Тёплый мох"</h2>
+            <p>Уютная шапочка из натурального хлопка, защищает ушки малыша от ветра.</p>
+            <p>Размеры: 36-48 см (обхват головы)</p>
+            <p>Цена: 800 руб.</p>
+            <button onclick="addToCart(4)">Купить</button>
+        </div>
+        <div class="product">
+            <img src="images/blanket.png" alt="Плед 'Мягкое облако'">
+            <h2>Плед "Мягкое облако"</h2>
+            <p>Нежный плед из флиса, отлично сохраняет тепло и приятно укутывает малыша.</p>
+            <p>Размер: 80x100 см</p>
+            <p>Цена: 2 000 руб.</p>
+            <button onclick="addToCart(5)">Купить</button>
+        </div>
+    </main>
+</body>
+</html>
