@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Корзина</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
     <script defer src="js/cart.js"></script>
 </head>
 <body>
@@ -21,8 +21,9 @@
     <main>
         <h2>Ваш заказ</h2>
         <div id="cart-items"></div>
-        <p id="cart-total"></p>
+        <p id="cart-total">Итого: 0 руб.</p>
         <button id="order-btn" onclick="placeOrder()">Оформить заказ</button>
+        <p id="order-message" style="display: none; color: green; font-weight: bold;">Заказ оформлен!</p>
     </main>
 </body>
 </html>
