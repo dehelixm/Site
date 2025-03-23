@@ -1,6 +1,9 @@
-body { font-family: Arial, sans-serif; background-color: #f0f0e6; margin: 0; padding: 0; }
-header { background-color: #b5c99a; padding: 10px; text-align: center; }
+body { font-family: Arial, sans-serif; background-color: #f0f0e6; margin: 0; padding: 0; text-align: center; }
+header { background-color: #b5c99a; padding: 10px; }
 nav a { margin: 0 10px; color: black; text-decoration: none; }
+main { max-width: 600px; margin: 20px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
 .cart-item { display: flex; align-items: center; justify-content: space-between; padding: 10px; border-bottom: 1px solid #ccc; }
-.cart-item img { width: 50px; height: auto; }
-button { background: #b5c99a; border: none; padding: 10px; cursor: pointer; margin-top: 10px; }
+.cart-item img { width: 50px; height: auto; margin-right: 10px; }
+button { background: #b5c99a; border: none; padding: 10px; cursor: pointer; margin-top: 10px; border-radius: 5px; }
+#cart-total { font-weight: bold; font-size: 18px; margin-top: 20px; }
+#order-message { font-size: 20px; margin-top: 15px; }
