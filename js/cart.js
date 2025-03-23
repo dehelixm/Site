@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const cartItems = document.getElementById("cart-items");
     const cartTotal = document.getElementById("cart-total");
+    const orderMessage = document.getElementById("order-message");
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     
     cartItems.innerHTML = "";
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (cart.length === 0) {
         cartItems.innerHTML = "<p>Корзина пуста</p>";
-        cartTotal.innerText = "";
+        cartTotal.innerText = "Итого: 0 руб.";
     } else {
         cart.forEach((product, index) => {
             total += product.price;
@@ -36,7 +37,7 @@ function placeOrder() {
         alert("Ваша корзина пуста!");
         return;
     }
-    alert("Заказ оформлен! Мы свяжемся с вами для уточнения деталей.");
+    document.getElementById("order-message").style.display = "block";
     localStorage.removeItem("cart");
-    location.reload();
+    setTimeout(() => location.reload(), 2000);
 }
